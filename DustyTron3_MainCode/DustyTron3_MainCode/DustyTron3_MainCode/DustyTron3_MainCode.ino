@@ -14,7 +14,7 @@ Motor Driver (:))
 //Global Speed
 int spd = 0; //4WD variable
 int augspd = 0;
-int spd2 = 0;
+int spd2 = 0; // this one has not been used
 
 
                           //Wheel Variables (The digital pins are directed to Arduino) (Other wire leads to Pololu)
@@ -86,6 +86,9 @@ Servo Augger;
 void setup() {
 Serial.begin(9600); //What baund we are using (from serial monitor)
 
+// pinMode() configures the specified pin to behave either as an input or output.
+// syntax for it is pinMode(pin,mode)
+  
 // these pinModes are only used for all the actuators
 pinMode(pwm_Horizontal, OUTPUT); //PWM_act - Pin 8
 pinMode(AM1A_Horizontal, OUTPUT); //M1INA
@@ -149,7 +152,14 @@ if(command =='6')
 Augger_movement(Augger,'g'); // MAX Reverse Aug Speed 3
 }
 
-//******************************(Conveyor Movement)*****************************//     
+//******************************(Conveyor Movement)*****************************//
+
+//analogWrite() writes an analog value (PWM wave) to a pin.
+//After a call to analogWrite(), the pin will generate a steady square wave of the specified 
+//duty cycle until the next call to analogWrite() (or a call to digitalRead() or digitalWrite() on the same pin).
+//You do not need to call pinMode() to set the pin as an output before calling analogWrite()
+//syntax is analogWrite(pin,value) where pin is the one you want. and value is a pwm between 0 (off) and 255 (on).
+  
 if(command == 'x')
 {
   setDirection_CON(0, CM1A, CM1B); // Stop - Conveyor Belt
@@ -168,6 +178,13 @@ if(command == 'z')
 
 //******************************(Actuator Movement auger)*****************************//     
 //********************Horizontal Movements********************
+
+// digitalWrite() writes a high or low value to a digital pin
+// syntax is digitalWrite(pin,value) where the value is either HIGH or LOW
+//HIGH will enable max voltage and LOW will disable to ground OV
+// if pin has been configured as an OUTPUT with pinMode(), its voltage will be set to the corresponding value.
+  
+  
 if(command == 'm')
 {
   setDirection_ACT(0, AM1A_Horizontal, AM1B_Horizontal); //Stop - Actuator
@@ -240,20 +257,24 @@ if (command == '`') //KILL SWITCH the button below esc, left of 1
 // spd2 was the other side paired wheels
 //spd2 hasnt been used anywhere
 
-if(command == '2'){  //Increment
-  if (spd == 255)
+// print() prints data to the serial port as human-readable ACII text.
+// example is Serial.print(78) gives "78"
+// syntax is Serial.print(val) or Serial.print(val,format) where format is in either BIN, OCT, DEC, HEX,
+  
+if(command == '2'){  //Increment the speed
+  if (spd == 255) // 255 is the max, if the speed is at 255 then it that value is printed.
   {
     Serial.print(spd);
-  }else{
+  }else{ // if the value is not 255 when 2 is pressed then it will higher it by 15 each time
    spd+= 15;
   } 
 }
 
-if(command == '1'){  //Decrement
-  if (spd == 0)
+if(command == '1'){  //Decrement the speed
+  if (spd == 0) // 0 is the minimum, if the speed is 0 then that value is printed.
   {
    Serial.print(spd);
-  }else{
+  }else{ // if the value is not 0 then the speed will be decremented by 15 each time 1 is pressed.
    spd-= 15;
    }
 }

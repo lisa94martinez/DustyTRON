@@ -84,7 +84,7 @@ Servo Augger;
 
 //Inititialization
 void setup() {
-Serial.begin(9600); //What baund we are using (from serial monitor)
+Serial.begin(9600); //What bound we are using (from serial monitor) it starts the connection
 
 // pinMode() configures the specified pin to behave either as an input or output.
 // syntax for it is pinMode(pin,mode)
@@ -183,38 +183,41 @@ if(command == 'z')
 // syntax is digitalWrite(pin,value) where the value is either HIGH or LOW
 //HIGH will enable max voltage and LOW will disable to ground OV
 // if pin has been configured as an OUTPUT with pinMode(), its voltage will be set to the corresponding value.
-  
+
+// setDirection_ACT(int d, int M1INA, int M1INB) is another void function 
+// the int d will either be 0(OFF), 1(Extend), or 2(Retract) 
+// int M1INA and M1INB are gonna be HIGH or LOW to give all voltage, or ground wirelead
   
 if(command == 'm')
 {
-  setDirection_ACT(0, AM1A_Horizontal, AM1B_Horizontal); //Stop - Actuator
+  setDirection_ACT(0, AM1A_Horizontal, AM1B_Horizontal); //Stop - Actuator // (OFF, LOW, LOW)
   digitalWrite(pwm_Horizontal, HIGH);
   }
 if(command == 'l') // moves the auger to the right (extends)
 {
-  setDirection_ACT(1, AM1A_Horizontal, AM1B_Horizontal); //Extend
+  setDirection_ACT(1, AM1A_Horizontal, AM1B_Horizontal); //Extend // (ON, HIGH, LOW)
   digitalWrite(pwm_Horizontal, HIGH);
   }
-if(command == 'j') moves the auger to the left (retracts)
+if(command == 'j') // moves the auger to the left (retracts)
 {
-  setDirection_ACT(2, AM1A_Horizontal, AM1B_Horizontal); //Retract
+  setDirection_ACT(2, AM1A_Horizontal, AM1B_Horizontal); //Retract // (ON, LOW, HIGH)
   digitalWrite(pwm_Horizontal, HIGH);
   }
   
 //********************Vertical Movements******************** // we need to change the command inputs
   if(command == 'm')
 {
-  setDirection_ACT(0, AM1A_Vertical, AM1B_Vertical); //Stop - Actuator
+  setDirection_ACT(0, AM1A_Vertical, AM1B_Vertical); //Stop - Actuator // (OFF, LOW, LOW)
   digitalWrite(pwm_Vertical, HIGH);
   }
 if(command == 'k')
 {
-  setDirection_ACT(1, AM1A_Vertical, AM1B_Vertical); //auger  moves downward (Extends)
+  setDirection_ACT(1, AM1A_Vertical, AM1B_Vertical); //auger  moves downward (Extends) // (ON, HIGH, LOW)
   digitalWrite(pwm_Vertical, HIGH);
   }
 if(command == 'i') // auger moves upward (Retracts)
 {
-  setDirection_ACT(2, AM1A_Vertical, AM1B_Vertical); //Retract
+  setDirection_ACT(2, AM1A_Vertical, AM1B_Vertical); //Retract // (ON, LOW, HIGH)
   digitalWrite(pwm_Vertical, HIGH);
   }
 

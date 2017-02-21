@@ -1,6 +1,5 @@
 //Pololu Motor Drivers
 
-
 void victor(int c, int A, int B){
        if (c == 0) // OFF
 {
@@ -19,9 +18,7 @@ void victor(int c, int A, int B){
        }
   }
 
-
 void wheelSpeed(int CASE, int SPEED, int PWM){
-  
   switch(CASE){
     case 0://increment speed
       if(SPEED == 255){
@@ -48,7 +45,6 @@ void wheelSpeed(int CASE, int SPEED, int PWM){
       analogWrite(PWM, SPEED);
       Serial.print(SPEED);
       break; 
-     
     }
    
   }

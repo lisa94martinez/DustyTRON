@@ -1,6 +1,3 @@
-
-
-
 // This is was the code for the old motor and motor drive (Stellares)
 /*
  THE RANGES SHOULD BE FROM 0 - 250 OR 0 - 180

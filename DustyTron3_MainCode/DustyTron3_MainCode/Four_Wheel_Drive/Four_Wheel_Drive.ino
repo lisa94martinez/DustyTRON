@@ -46,7 +46,6 @@ void wheelSpeed(int CASE, int SPEED, int PWM){
       Serial.print(SPEED);
       break; 
     }
-   
   }
   
 

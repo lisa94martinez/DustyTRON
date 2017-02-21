@@ -1,3 +1,7 @@
+
+
+
+// This is was the code for the old motor and motor drive (Stellares)
 /*
  THE RANGES SHOULD BE FROM 0 - 250 OR 0 - 180
  FULL REVERSE (0) 
@@ -7,7 +11,8 @@
  FULL FORWARD (180) OR (250)
  */
 //FUNCTION FOR AUGGER MOVEMENT
-void Augger_movement(Servo y, char cmd){
+
+/*void Augger_movement(Servo y, char cmd){
 
 //Stop
 if (cmd == 'a')
@@ -44,6 +49,7 @@ if (cmd == 'g'){
   y.write(0);  // MAX SPEED-3
   }
 }
+*/
 
 
 

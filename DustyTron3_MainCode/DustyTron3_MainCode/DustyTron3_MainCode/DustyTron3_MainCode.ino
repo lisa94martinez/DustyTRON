@@ -1,7 +1,7 @@
 /*********************************
 DustyTron 3.0 - Software Team
 **********************************/
-#include<Servo.h>
+#include<Servo.h> // servos are not used. Yet..
 
 
 /* (Victor's - Notation)

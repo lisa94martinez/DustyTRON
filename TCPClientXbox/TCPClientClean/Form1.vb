@@ -5,7 +5,6 @@ Imports Microsoft.Xna.Framework.Input
 Imports Microsoft.Xna.Framework.GamerServices
 Imports Microsoft.Xna.Framework.Content
 
-
 'Xbox 360 Controller Buttons
 
 'A button is not being used
@@ -612,8 +611,6 @@ Public Class Form1
         'SendKeys.Send(stopR)
         'End If
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

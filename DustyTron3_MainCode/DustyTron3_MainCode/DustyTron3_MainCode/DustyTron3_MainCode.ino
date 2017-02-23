@@ -3,19 +3,9 @@ DustyTron 3.0 - Software Team
 **********************************/
 #include<Servo.h> // servos are not used. Yet..
 
-
-/* (Victor's - Notation)
-Motor Driver (VI)
-Motor Driver (A)
-Motor Driver (RD)
-Motor Driver (:))
-*/
-
 //Global Speed
 int spd = 0; //4WD variable
 int augspd = 0;
-int spd2 = 0; // this one has not been used
-
 
                           //Wheel Variables (The digital pins are directed to Arduino) (Other wire leads to Pololu)
 
@@ -254,7 +244,7 @@ if (command == '`') //KILL SWITCH the button below esc, left of 1
 
 
 
-//*********************************** 4WControls  *****************************
+//*********************************** 4WControl Speeds *****************************
 //We need to decide if we need to change the spd and spd2
 // i think spd was for one side paired wheels
 // spd2 was the other side paired wheels
@@ -283,29 +273,10 @@ if(command == '1'){  //Decrement the speed
 }
 
 
-//if(command == 'f'){  //Increment
-  //if (spd2 == 255)
-  //{
-    //Serial.print(spd2);
-  //}else{
-   //spd2+= 15;
-  //} 
-//}
-
-//if(command == 'o'){  //Decrement
-  //if (spd2 == 0)
-  //{
-   //Serial.print(spd2);
-  //}else{
-   //spd2-= 15;
-   //}
-//}
-
-
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^Robot Movements^^^^^^^^^^^^^^^^^^^^^
 if(command == 'f') // need to find a different key that is not q maybe f
 {
-  //victor(0, WM1A_LeftFront, WM1B_LeftFront); // Stop all wheels
+
   analogWrite(pwm_LeftFront, 0);
   analogWrite(pwn_RightFront, 0);
   analogWrite(pwn_LeftBack, 0);

@@ -9,7 +9,7 @@
  */
 //FUNCTION FOR AUGGER MOVEMENT
 
-/*void Augger_movement(Servo y, char cmd){
+void Augger_movement(Servo y, char cmd){
 
 //Stop
 if (cmd == 'a')
@@ -46,8 +46,3 @@ if (cmd == 'g'){
   y.write(0);  // MAX SPEED-3
   }
 }
-*/
-
-
-
-

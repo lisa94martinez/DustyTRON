@@ -96,6 +96,7 @@ Public Class Form1
     Dim wheelmovement1 As Integer = 0
     Dim wheelmovement2 As Integer = 0
     Dim RightThumbCenter As Integer = 0
+    Dim RightThumbCenter2 As Integer = 0
 
     Dim RightThumbLeft As Integer = 0
     Dim RightThumbRight As Integer = 0
@@ -180,8 +181,8 @@ Public Class Form1
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Stop Auger Movements<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick at the center<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        If currentState2.ThumbSticks.Right.Y > -0.1F And currentState2.ThumbSticks.Right.Y < 0.1F And currentState2.ThumbSticks.Right.X > -0.1F And currentState2.ThumbSticks.Right.X < 0.1F And RightThumbCenter = 0 Then
-            RightThumbCenter = 1
+        If currentState2.ThumbSticks.Right.Y > -0.1F And currentState2.ThumbSticks.Right.Y < 0.1F And currentState2.ThumbSticks.Right.X > -0.1F And currentState2.ThumbSticks.Right.X < 0.1F And RightThumbCenter2 = 0 Then
+            RightThumbCenter2 = 1
             RightThumbUp = 0
             RightThumbDown = 0
             RightThumbLeft = 0
@@ -193,8 +194,8 @@ Public Class Form1
             SendKeys.Send(StopAugerActuators)
             ListBox2.Items.Add(StopAugerActuators)
 
-        ElseIf currentState2.ThumbSticks.Right.Y > 0.1F Or currentState2.ThumbSticks.Right.Y < -0.1F Or currentState2.ThumbSticks.Right.X > 0.1F Or currentState2.ThumbSticks.Right.X < -0.1F And RightThumbCenter = 1 Then
-            RightThumbCenter = 0
+        ElseIf currentState2.ThumbSticks.Right.Y > 0.1F Or currentState2.ThumbSticks.Right.Y < -0.1F Or currentState2.ThumbSticks.Right.X > 0.1F Or currentState2.ThumbSticks.Right.X < -0.1F And RightThumbCenter2 = 1 Then
+            RightThumbCenter2 = 0
         End If
 
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick Foward<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

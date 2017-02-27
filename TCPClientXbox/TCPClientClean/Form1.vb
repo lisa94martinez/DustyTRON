@@ -75,14 +75,14 @@ Public Class Form1
     Dim StopAugerActuators As Char = "m"
 
     '--------Auger Actuator Movements-----------------
-    Dim LeftThumbCenter As Integer = 0
+    Dim RightThumbCenter2 As Integer = 0
     Dim a1 As Integer = 0
     Dim a2 As Integer = 0
     Dim a6 As Integer = 0
-    Dim LeftThumbUp As Integer = 0
-    Dim LeftThumbLeft As Integer = 0
-    Dim LeftThumbRight As Integer = 0
-    Dim LeftThumbDown As Integer = 0
+    Dim RightThumbUp2 As Integer = 0
+    Dim RightThumbLeft2 As Integer = 0
+    Dim RightThumbRight2 As Integer = 0
+    Dim RightThumbDown2 As Integer = 0
 
     '---------CONVEYOR BELT----------
     Dim ConvBeltRev As Integer = 0
@@ -96,7 +96,6 @@ Public Class Form1
     Dim wheelmovement1 As Integer = 0
     Dim wheelmovement2 As Integer = 0
     Dim RightThumbCenter As Integer = 0
-    Dim RightThumbCenter2 As Integer = 0
 
     Dim RightThumbLeft As Integer = 0
     Dim RightThumbRight As Integer = 0
@@ -183,10 +182,10 @@ Public Class Form1
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick at the center<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         If currentState2.ThumbSticks.Right.Y > -0.1F And currentState2.ThumbSticks.Right.Y < 0.1F And currentState2.ThumbSticks.Right.X > -0.1F And currentState2.ThumbSticks.Right.X < 0.1F And RightThumbCenter2 = 0 Then
             RightThumbCenter2 = 1
-            RightThumbUp = 0
-            RightThumbDown = 0
-            RightThumbLeft = 0
-            RightThumbRight = 0
+            RightThumbUp2 = 0
+            RightThumbDown2 = 0
+            RightThumbLeft2 = 0
+            RightThumbRight2 = 0
 
             a1 = 0
             a6 = 0
@@ -200,8 +199,8 @@ Public Class Form1
 
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick Foward<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         If currentState2.ThumbSticks.Right.Y > 0.5F And currentState2.ThumbSticks.Right.Y < 1.5F Then
-            If RightThumbUp = 0 Then
-                RightThumbUp = 1
+            If RightThumbUp2 = 0 Then
+                RightThumbUp2 = 1
                 SendKeys.Send(AugerUp)
                 ListBox2.Items.Add(AugerUp)
 
@@ -212,8 +211,8 @@ Public Class Form1
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick Backward<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         If currentState2.ThumbSticks.Right.Y < -0.5F And currentState2.ThumbSticks.Right.Y > -1.5F Then
 
-            If RightThumbDown = 0 Then
-                RightThumbDown = 1
+            If RightThumbDown2 = 0 Then
+                RightThumbDown2 = 1
                 SendKeys.Send(AugerDown)
                 ListBox2.Items.Add(AugerDown)
 
@@ -224,8 +223,8 @@ Public Class Form1
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick Left<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         If currentState2.ThumbSticks.Right.X < -0.5F And currentState2.ThumbSticks.Right.X > -1.5F Then
 
-            If RightThumbLeft = 0 Then
-                RightThumbLeft = 1
+            If RightThumbLeft2 = 0 Then
+                RightThumbLeft2 = 1
                 SendKeys.Send(AugerLeft)
                 ListBox2.Items.Add(AugerLeft)
 
@@ -235,8 +234,8 @@ Public Class Form1
 
         '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Left Thumbstick Right<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         If currentState2.ThumbSticks.Right.X > 0.5F And currentState2.ThumbSticks.Right.X < 1.5F Then
-            If RightThumbRight = 0 Then
-                RightThumbRight = 1
+            If RightThumbRight2 = 0 Then
+                RightThumbRight2 = 1
                 SendKeys.Send(AugerRight)
                 ListBox2.Items.Add(AugerRight)
 
@@ -642,40 +641,5 @@ Public Class Form1
 
     End Sub
 
-    ' Lisa commented out because it is not being used
-    'Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
-    'End Sub
-
-    'Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    'End Sub
-
-    'Private Sub Label16_Click(sender As Object, e As EventArgs)
-
-    'End Sub
-
-    'Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
-
-    'End Sub
-
-    'Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    'End Sub
-
-    'Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-
-    'End Sub
-
-    'Private Sub Label18_Click(sender As Object, e As EventArgs)
-
-    'End Sub
-
-    'Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    'End Sub
-
-    'Private Sub Label23_Click(sender As Object, e As EventArgs) Handles Label23.Click
-
-    'End Sub
 End Class
